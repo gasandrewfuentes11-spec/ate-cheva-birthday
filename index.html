@@ -1,0 +1,702 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Ate Cheva 💗</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --pink: #ff8eb5;
+    --rose: #e85d91;
+    --cream: #fff4ef;
+    --purple: #b9a4ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    color: white;
+    overflow-x: hidden;
+    background: #160f2b;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+        radial-gradient(ellipse at 15% 20%, #a13b8260, transparent 40%),
+        radial-gradient(ellipse at 85% 25%, #6651b966, transparent 40%),
+        radial-gradient(ellipse at 50% 100%, #d74b7750, transparent 50%),
+        linear-gradient(140deg, #160f2b, #2b1743 50%, #171127);
+    background-size: 150% 150%;
+    animation: atmosphere 12s ease infinite alternate;
+}
+
+@keyframes atmosphere {
+    from { background-position: 0% 0%; }
+    to { background-position: 100% 100%; }
+}
+
+#stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #ffc6e0;
+    animation: twinkle var(--duration) ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: .15; transform: scale(.7); }
+    to { opacity: 1; transform: scale(1.5); }
+}
+
+.page {
+    width: 100%;
+    padding: 35px 18px 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-tag {
+    border: 1px solid #ffffff25;
+    background: #ffffff0b;
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 40px;
+    color: #f9c2db;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-align: center;
+    animation: fadeUp 1s ease both;
+}
+
+.hero {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    padding: 45px 0 30px;
+    animation: fadeUp 1.2s ease both;
+}
+
+.eyebrow {
+    color: #f9b8d2;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 11px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(60px, 12vw, 112px);
+    font-weight: 400;
+    line-height: 1.2;
+    background: linear-gradient(100deg, #fff3f8, #ff91bd, #ffe4bc, #d4bcff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 22px #e76ca855);
+}
+
+.recipient {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(20px, 5vw, 34px);
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: #fff1f7;
+    margin-top: 10px;
+}
+
+.recipient span {
+    color: #ff9cbe;
+}
+
+.hero-subtitle {
+    color: #d3c1df;
+    font-size: 13px;
+    margin-top: 17px;
+    line-height: 1.9;
+}
+
+.layout {
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.panel {
+    border: 1px solid #ffffff20;
+    border-radius: 24px;
+    background: linear-gradient(145deg, #ffffff12, #ffffff05);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 20px 60px #00000020;
+    overflow: hidden;
+    animation: fadeUp 1.2s ease both;
+}
+
+.photo-panel {
+    padding: 18px;
+    text-align: center;
+}
+
+.photo-frame {
+    padding: 9px;
+    background: linear-gradient(145deg, #ffe6f1, #d8b6ff, #fff1d8);
+    border-radius: 18px;
+    transform: rotate(-2deg);
+    transition: transform .5s, box-shadow .5s;
+    box-shadow: 0 0 30px #f08cb32b;
+}
+
+.photo-frame:hover {
+    transform: rotate(0deg) scale(1.025);
+    box-shadow: 0 0 35px #f08cb366;
+}
+
+.photo-frame img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Displayed until you add your photo */
+.photo-placeholder {
+    aspect-ratio: 4 / 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-radius: 12px;
+    color: #ffe5f1;
+    background:
+        radial-gradient(circle at 50% 30%, #b36ca7, transparent 50%),
+        linear-gradient(150deg, #38234c, #21142f);
+}
+
+.photo-placeholder .flower {
+    font-size: 65px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.photo-placeholder p {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.photo-caption {
+    font-family: 'Great Vibes', cursive;
+    font-size: 29px;
+    color: #ffd1e5;
+    margin: 22px 0 8px;
+}
+
+.photo-note {
+    color: #cdbbd9;
+    font-size: 11px;
+}
+
+.content-panel {
+    padding: 30px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #ffa9cc;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #fff0f7;
+    margin-bottom: 15px;
+}
+
+.verse {
+    color: #e4d4ec;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.verse-reference {
+    color: #ffb3d0;
+    margin-top: 15px;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.divider {
+    width: 55px;
+    height: 2px;
+    background: linear-gradient(90deg, #ff8eb5, #c1a2ff);
+    border-radius: 10px;
+    margin: 25px 0;
+}
+
+.birthday-message {
+    color: #d8c7e4;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.blessing {
+    color: #ffd0e3;
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-style: italic;
+    margin-top: 22px;
+    line-height: 1.8;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+button {
+    padding: 13px 20px;
+    border-radius: 40px;
+    border: 1px solid #ffffff30;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.primary {
+    background: linear-gradient(100deg, #f16d9f, #bd83d8);
+    color: white;
+    box-shadow: 0 8px 25px #e85d9140;
+}
+
+.secondary {
+    background: #ffffff0a;
+    color: #ffe4f1;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px #e85d9150;
+}
+
+#prayer {
+    display: none;
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+    padding: 30px 25px;
+    margin-top: 24px;
+    animation: fadeUp .7s ease;
+}
+
+#prayer h2 {
+    color: #ffb6d2;
+}
+
+#prayer p {
+    font-size: 13px;
+    line-height: 2;
+    color: #e4d5ec;
+}
+
+.closing {
+    text-align: center;
+    margin-top: 42px;
+    color: #c7b3d7;
+    font-size: 11px;
+    line-height: 2;
+    letter-spacing: 1px;
+}
+
+.closing .heart {
+    font-size: 23px;
+    margin-bottom: 8px;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.floating {
+    position: fixed;
+    bottom: -40px;
+    pointer-events: none;
+    z-index: 10;
+    animation: rise linear forwards;
+}
+
+@keyframes rise {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    15% { opacity: .9; }
+    100% { transform: translateY(-115vh) rotate(45deg); opacity: 0; }
+}
+
+#confetti {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 20;
+}
+
+@media (max-width: 650px) {
+    .page {
+        padding: 25px 14px 40px;
+    }
+
+    .hero {
+        padding: 38px 0 25px;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+    }
+
+    .photo-panel {
+        padding: 16px;
+    }
+
+    .photo-frame {
+        max-width: 290px;
+        margin: auto;
+    }
+
+    .content-panel {
+        padding: 27px 22px;
+    }
+
+    .top-tag {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .recipient {
+        letter-spacing: 3px;
+    }
+
+    .closing {
+        margin-top: 30px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+<canvas id="confetti"></canvas>
+
+<main class="page">
+
+    <div class="top-tag">✦ ✦</div>
+
+    <header class="hero">
+        <p class="eyebrow">A beautiful day, a beautiful blessing</p>
+
+        <h1>Happy Birthday</h1>
+
+        <div class="recipient">
+            ♡ ATE <span>CHEVA</span> ♡
+        </div>
+
+        <p class="hero-subtitle">
+            Celebrating your life, your faith, and the beautiful person
+            God created you to be.
+        </p>
+    </header>
+
+    <section class="layout">
+
+        <div class="panel photo-panel">
+
+            <div class="photo-frame">
+
+                <!-- Replace this placeholder with your own photo -->
+              
+<div class="photo-frame">
+  <img src="atecheva.png" alt="Ate Cheva">
+</div>
+
+
+            </div>
+
+            <div class="photo-caption">A gift from God</div>
+
+            <p class="photo-note">
+                You are loved more than you know. ♡
+            </p>
+
+        </div>
+
+        <article class="panel content-panel">
+
+            <p class="section-label">A promise from God ✨</p>
+
+            <h2>A future filled with hope</h2>
+
+            <p class="verse">
+                “For I know the plans I have for you,” declares the Lord,
+                “plans to prosper you and not to harm you, plans to give
+                you hope and a future.”
+            </p>
+
+            <p class="verse-reference">
+                JEREMIAH 29:11
+            </p>
+
+            <div class="divider"></div>
+
+            <p class="section-label">A birthday message for you</p>
+
+            <p class="birthday-message">
+                Happy Birthday, Ate Cheva! 💗 May the Lord bless you
+                with good health, a peaceful heart, unshakable faith,
+                and happiness that comes from Him. May He guide every
+                step you take and open doors according to His perfect
+                plans.
+                <br><br>
+                Thank you for being a blessing to the people around you.
+                May your new year of life be filled with meaningful
+                moments, answered prayers, and countless reasons to
+                thank God.
+            </p>
+
+            <p class="blessing">
+                “May His grace go before you and His love surround you,
+                today and always.” ♡
+            </p>
+
+        </article>
+
+    </section>
+
+    <div class="actions">
+        <button class="primary" onclick="showPrayer()">
+            💌 CLICK ME
+        </button>
+
+        <button class="secondary" onclick="celebrate()">
+            ✨ BOOM!! mo boto ni siya
+        </button>
+    </div>
+
+    <section class="panel" id="prayer">
+
+        <p class="section-label">A little prayer from the heart</p>
+
+        <h2>God bless you, Ate Cheva! 💗</h2>
+
+        <p>
+            Heavenly Father, thank You for the gift of Ate Cheva's life.
+            Please continue to guide her, protect her, and strengthen her
+            faith in every season. Fill her heart with peace, her days
+            with joy, and her future with hope. When life feels uncertain,
+            remind her that she is never alone and that Your love remains
+            constant. Bless the desires of her heart according to Your
+            will, and help her grow closer to You each day.
+            <br><br>
+            In Jesus' name, Amen. 🙏
+        </p>
+
+        <div class="divider" style="margin:22px auto;"></div>
+
+        <p style="color:#ffb6d2;font-family:'Great Vibes',cursive;font-size:35px;">
+            You are a blessing, Ate Cheva!
+        </p>
+
+    </section>
+
+    <footer class="closing">
+        <div class="heart">♡</div>
+        MADE WITH LOVE, PRAYERS & FAITH<br>
+        MAY GOD'S GOODNESS FOLLOW YOU ALWAYS
+        <div style="margin-top:10px;color:#f5a5c8;">✦ ✧ ✦</div>
+    </footer>
+
+</main>
+
+<script>
+// Create the twinkling stars.
+const starContainer = document.getElementById("stars");
+
+for (let i = 0; i < 90; i++) {
+    const star = document.createElement("span");
+    star.className = "star";
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+    star.style.setProperty(
+        "--duration",
+        (1.5 + Math.random() * 4) + "s"
+    );
+    star.style.animationDelay = Math.random() * 4 + "s";
+    star.style.opacity = Math.random();
+    starContainer.appendChild(star);
+}
+
+// Floating hearts, sparkles, and flowers.
+const symbols = ["♡", "♥", "✧", "✨", "🌸", "💗"];
+
+function createFloating() {
+    const item = document.createElement("span");
+    item.className = "floating";
+    item.textContent =
+        symbols[Math.floor(Math.random() * symbols.length)];
+
+    item.style.left = Math.random() * 100 + "vw";
+    item.style.fontSize = (15 + Math.random() * 19) + "px";
+    item.style.color =
+        ["#ff9ec5", "#e0c7ff", "#fff0c7"][Math.floor(Math.random() * 3)];
+    item.style.animationDuration = (6 + Math.random() * 5) + "s";
+
+    document.body.appendChild(item);
+
+    setTimeout(() => item.remove(), 12000);
+}
+
+setInterval(createFloating, 650);
+
+// Show or hide the prayer.
+function showPrayer() {
+    const prayer = document.getElementById("prayer");
+    const isHidden = getComputedStyle(prayer).display === "none";
+
+    prayer.style.display = isHidden ? "block" : "none";
+
+    if (isHidden) {
+        prayer.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+        celebrate();
+    }
+}
+
+// Confetti celebration.
+function celebrate() {
+    const canvas = document.getElementById("confetti");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const colors = ["#ff91bd", "#f8d99b", "#c8aaff", "#ffffff"];
+    const pieces = [];
+
+    for (let i = 0; i < 160; i++) {
+        pieces.push({
+            x: Math.random() * canvas.width,
+            y: -Math.random() * canvas.height,
+            size: 3 + Math.random() * 7,
+            speed: 2 + Math.random() * 4,
+            drift: Math.random() * 2 - 1,
+            color: colors[Math.floor(Math.random() * colors.length)],
+            rotation: Math.random() * 360
+        });
+    }
+
+    let frame = 0;
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (const p of pieces) {
+            p.y += p.speed;
+            p.x += p.drift;
+            p.rotation += 4;
+
+            ctx.save();
+            ctx.translate(p.x, p.y);
+            ctx.rotate(p.rotation * Math.PI / 180);
+            ctx.fillStyle = p.color;
+            ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+            ctx.restore();
+        }
+
+        frame++;
+
+        if (frame < 180) {
+            requestAnimationFrame(animate);
+        } else {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    }
+
+    animate();
+}
+
+window.addEventListener("resize", () => {
+    const canvas = document.getElementById("confetti");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+</script>
+
+</body>
+</html>
